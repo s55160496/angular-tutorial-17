@@ -1,0 +1,22 @@
+<div class="main_content">
+    <div class="lndg_carousel_allwrap" aria-label="Featured Issues" role="complementary">
+        <div class="lndg_carousel_allwrap_bkd"></div>
+    <div class="landing__headline_box page_top_head">
+        <h1 class="head_top" alt="The Complete Vanity Fair Archive">The Complete Vanity Fair Archive</h1>
+        <!-- <img src="assets/images/image-cover.jpg" alt="cover"> -->
+    </div>
+
+    <div class="container" #container>
+        <div class="left" *ngIf="totalPages > 1" (click)="currentPage != 1 && changePage(-1)" [ngClass]="{'disabled':currentPage === 1}"></div>
+        <div class="cards" [ngClass]="{'w-100': totalPages === 1}">
+            <div class="overflow" [ngStyle]="{'width': overflowWidth, 'left': pagePosition}">
+                <div class="card" *ngFor="let i of arr; let index = index" [ngStyle]="{'width': cardWidth}">
+                    <span>{{i}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="right" *ngIf="totalPages > 1" (click)="currentPage != totalPages && changePage(+1)"
+            [ngClass]="{'disabled':currentPage === totalPages}"></div>
+    </div>
+</div>
+

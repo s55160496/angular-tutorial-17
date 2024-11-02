@@ -1,0 +1,124 @@
+.w-100 {
+    width: 100%!important;
+  }
+  
+  .container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .cards {
+    width: calc(100% - 80px);
+    overflow: hidden;
+  }
+  
+  .overflow {
+    position: relative;
+    transition: left 0.5s ease-in-out;
+  }
+  
+  .card {
+    height: 300px;
+    background-color: #e0e1e2;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .no-right-margin {
+    margin-right: 0px;
+  }
+  
+  .card span {
+    font-size:48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .left,
+  .right {
+    height: 30px;
+    width: 30px;
+    background-color: #0072bc;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .left.disabled, .right.disabled {
+    background-color:#CCC;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    right: 0;
+  }
+
+  .lndg_carousel_allwrap {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #345;
+    position: relative;
+    overflow: hidden;
+}
+
+ .landing__headline_box.page_top_head {
+    width: 100%;
+    padding: 110px 20px;
+    margin-top: 0;
+    background-color: transparent;
+}
+
+.landing__headline_box .head_top {
+   // background-color: #0072bc;
+    background-position-x: center;
+    background-image: url(https://vanityfair.archive.content.pugpig.com/vanityfair/images/bnr-vanityfair-logo-tag-white.png);
+    background-size: auto 180px;
+    background-repeat: no-repeat;
+    height: 180px;
+    padding: 0;
+    border-bottom: 0;
+    margin: 10px auto 0;
+    font-size: 0;
+    text-indent: -9999px;
+}
+
+.landing__headline_box, .page_issue .landing__headline_box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .6);
+    top: 0;
+}
+
+.lndg_carousel_allwrap_bkd {
+    background: linear-gradient(rgba(22, 30, 37, .3), rgba(44, 50, 55, .3)), no-repeat bottom 15% center / cover url(https://vanityfair.archive.content.pugpig.com/vanityfair/images/banners/vf-landing-02-beach.jpg);
+    height: 410px;
+    width: 100%;
+    opacity: .8;
+    position: absolute;
+    right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+     .landing__headline_box .head_top {
+        background-position-x: center;
+        background-size: 100% auto;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+     .landing__headline_box .head_top {
+        background-position-x: center;
+        background-size: 100% auto;
+    }
+}
