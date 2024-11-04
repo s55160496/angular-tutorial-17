@@ -1,0 +1,27 @@
+<table datatable class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th >#</th>
+        <th *ngFor="let column of columnArray">{{column.header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData;let i = index">
+        <td>{{i+1}}</td>
+        <td *ngFor="let column of columnArray"> 
+
+          <div *ngIf="column.header == 'action' && showActionButton">
+            <button class="btn btn-sm btn-warning" (click)="editRecord(item)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteRecord(item)">Delete</button>
+          </div>
+          <div *ngIf="column !=='action'">
+            <span *ngIf="column.dataType == 'string'"> {{item[column.fieldName] | titlecase}}</span>
+            <span *ngIf="column.dataType == 'date'"> {{item[column.fieldName] | date :'dd-MM-YYYY'}}</span>
+          </div>
+        
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
