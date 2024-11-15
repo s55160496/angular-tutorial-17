@@ -7,34 +7,92 @@
  *
  */
 
- * {
-    -webkit-transition: margin-left 0.2s ease-in-out;
-    -moz-transition: margin-left 0.2s ease-in-out;
-    -ms-transition: margin-left 0.2s ease-in-out;
-    -o-transition: margin-left 0.2s ease-in-out;
-    transition: margin-left 0.2s ease-in-out;
+//  * {
+//     -webkit-transition: margin-left 0.2s ease-in-out;
+//     -moz-transition: margin-left 0.2s ease-in-out;
+//     -ms-transition: margin-left 0.2s ease-in-out;
+//     -o-transition: margin-left 0.2s ease-in-out;
+//     transition: margin-left 0.2s ease-in-out;
+// }
+// .main-container {
+//     margin-top: 56px;
+//     margin-left: 235px;
+//     //padding: 15px;
+//     -ms-overflow-x: hidden;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     position: relative;
+//     overflow: hidden;
+// }
+// .collapsed {
+//     margin-left: 60px;
+// }
+// @media screen and (max-width: 992px) {
+//     .main-container {
+//         margin-left: 0px !important;
+//     }
+// }
+// @media print {
+//     .main-container {
+//         margin-top: 0px !important;
+//         margin-left: 0px !important;
+//     }
+// }
+
+//@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
 }
-.main-container {
-    margin-top: 56px;
-    margin-left: 235px;
-    //padding: 15px;
-    -ms-overflow-x: hidden;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    position: relative;
+
+.main-page {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-image: url("https://raw.githubusercontent.com/codzsword/bootstrap-sidebar/refs/heads/main/background-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+h3 {
+    font-size: 1.2375rem;
+    color: #FFF;
+}
+
+
+/* Layout skeleton */
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
     overflow: hidden;
+    transition: all 0.35s ease-in-out;
 }
-.collapsed {
-    margin-left: 60px;
+
+
+
+.content {
+    flex: 1;
+    max-width: 100vw;
+    width: 100vw;
 }
-@media screen and (max-width: 992px) {
-    .main-container {
-        margin-left: 0px !important;
-    }
-}
-@media print {
-    .main-container {
-        margin-top: 0px !important;
-        margin-left: 0px !important;
+
+/* Responsive */
+
+@media (min-width:768px) {
+    .content {
+        width: auto;
     }
 }

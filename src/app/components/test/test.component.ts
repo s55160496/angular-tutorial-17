@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, inject, OnDestroy, OnInit, Output } from '@angular/core';
-import { UserService } from '../../_services/user.service';
+import { UserService } from '../../_services/api/user.service';
 import { users } from '../../_model/user';
 import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';

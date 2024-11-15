@@ -1,19 +1,9 @@
-  <app-admin-header></app-admin-header>
+  <!-- <app-admin-header></app-admin-header>
   <app-admin-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-admin-sidebar>
   <section class="main-container" [ngClass]="{ collapsed: collapedSideBar }">
-    <!-- <div class="wrapper" fxLayout="column" fxFlex="grow">
-      <div class="content" fxFlex="grow">
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <router-outlet></router-outlet>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <router-outlet></router-outlet>
 
-  </section>
+  </section> -->
 
   <!-- <app-admin-header></app-admin-header>
   <div class="container-fluid">
@@ -30,4 +20,21 @@
       </div>
     </div>
   </div> -->
+    <div class="main-page">
+      <div class="wrapper">
+        <app-admin-sidebar></app-admin-sidebar>
+        <!-- Main Component -->
+        <div class="main">
+            <app-admin-header></app-admin-header>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h3>Bootstrap Sidebar Tutorial</h3>
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </div>
   

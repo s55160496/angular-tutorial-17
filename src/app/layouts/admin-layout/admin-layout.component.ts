@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AdminLayoutComponent implements OnInit {
   collapedSideBar: boolean = false;
-
+ 
+  
   constructor() {}
 
   ngOnInit() {}
@@ -23,4 +24,5 @@ export class AdminLayoutComponent implements OnInit {
       console.log('Sidebar collapsed state:', this.collapedSideBar); // Optionally log it
 
   }
+
 }
