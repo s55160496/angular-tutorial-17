@@ -1,0 +1,136 @@
+<!--
+ * Copyright (c) 2020 PayGate (Pty) Ltd
+ *
+ * Author: App Inlet (Pty) Ltd
+ *
+ * Released under the GNU General Public License Version 3
+ *
+-->
+<!--  [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}" -->
+<nav class="sidebar" [ngClass]="{collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <!-- <span>{{ 'Dashboard' | translate }}</span> -->
+             <span>Dashboard</span>
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('payweb3')">
+                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                <!-- <span>{{ 'Payweb3' | translate }}</span> -->
+                <span>Payweb3</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'payweb3'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/payweb3/initiate']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Initiate' | translate }}</span> -->
+                            <span>Initiate</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/payweb3/query']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Query' | translate }}</span> -->
+                            <span>Query</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('cardpayment')">
+                <i class="fa fa-credit-card"></i>&nbsp;
+                <!-- <span>{{ 'Card Payment' | translate }}</span> -->
+                <span>Card Payment</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'cardpayment'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/cardpayment/initiate']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Initiate' | translate }}</span> -->
+                            <span>Initiate</span>
+                        </a>
+                        <!-- <ul class="submenu">
+
+                        </ul> -->
+                    </li>
+                    <li>
+                        <a [routerLink]="['/cardpayment/query']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Query' | translate }}</span> -->
+                            <span>Query</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('webpayment')">
+                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                <!-- <span>{{ 'Web Payment' | translate }}</span> -->
+                 <span>Web Payment</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'webpayment'">
+                <ul class="submenu">
+                    <li>
+                        <a class="list-group-item" (click)="addExpandClass('initiate')">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Web Payment' | translate }}</span> -->
+                             <span>Initiate</span>
+                        </a>
+                        <li class="nested" [class.expand]="showMenu === 'initiate'">
+                            <ul class="submenu">
+                                <a [routerLink]="['/webpayment/query']" [routerLinkActive]="['router-link-active']">
+                                    <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                                    <!-- <span>{{ 'Query' | translate }}</span> -->
+                                    <span>Query 1</span>
+                                </a>
+                                <a [routerLink]="['/webpayment/query']" [routerLinkActive]="['router-link-active']">
+                                    <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                                    <!-- <span>{{ 'Query' | translate }}</span> -->
+                                    <span>Query 2</span>
+                                </a>
+                            </ul>
+                        </li>
+                    <li>
+                        <a [routerLink]="['/webpayment/query']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                            <!-- <span>{{ 'Query' | translate }}</span> -->
+                            <span>Query</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="header-fields">
+            <a (click)="toggleRtlLtr()" class="list-group-item">
+                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+            </a>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('profile')">
+                    <span><i class="fa fa-user"></i>&nbsp; Test User</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'profile'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/login']" (click)="onLoggedout()">
+                                <span><i class="fa fa-fw fa-power-off"></i> Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>Collapse Sidebar</span>
+    </div>
+</nav>
+
