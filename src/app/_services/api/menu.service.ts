@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { sideNavItems, sideNavSections } from '../../data/side-nav.data';
+import { Observable } from 'rxjs';
+import { SideNavSection } from '../../_model/menu';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +10,8 @@ import { sideNavItems, sideNavSections } from '../../data/side-nav.data';
 
 export class MenuService implements OnInit {
 
-    sideNavItems = sideNavItems;
-    sideNavSections = sideNavSections;
+  const sideNavItems: any[] = [];
+   Sections: SideNavSection[] = [];
 
   constructor(private http:HttpClient) { 
   
@@ -24,6 +26,10 @@ export class MenuService implements OnInit {
    // return SideNavSection[] :SideNavSection;
     //return this.http.get<SideNavSection>();
 
+  }
+
+  fetchMenuData():Observable<SideNavSection[]>{
+    return this.Sections = sideNavSections;
   }
 
 }

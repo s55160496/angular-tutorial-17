@@ -1,6 +1,6 @@
 //import { SideNavItems, SideNavSection } from '@modules/navigation/models';
 
-import { SideNavItems, SideNavSection } from "../_model/Menu";
+import { SideNavItems, SideNavSection } from "../_model/menu";
 
 export const sideNavSections: SideNavSection[] = [
     {
